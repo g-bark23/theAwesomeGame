@@ -1,0 +1,16 @@
+***LOGIC***
+-create a structure to hold the game data in
+-build the rules of the game to work with the structure of game data
+
+***VISUAL***
+-canvas with grid
+	how many grids?
+
+
+***DATABASE***
+-ajax calls to database
+	push and pull
+
+
+
+
