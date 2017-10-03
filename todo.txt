@@ -13,4 +13,24 @@
 
 
 
+***************************
+user page
+	game grid
+	ajax calls
+		push on click
+		pull every half second
+
+php logic
+	push clicks to db
+	pull gameboard from db
+
+db
+	game table
+
+python script
+	pulls db
+	logic
+	push db
+
+
 
