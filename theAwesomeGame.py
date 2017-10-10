@@ -10,7 +10,7 @@ config = {
 	'database':'theAwesomeGame'
 }
 
-#Board is 100x100 (102x102)
+#Board is 30x30 (33x33)
 
 #### DB 
 ####	x (int)
@@ -33,7 +33,7 @@ else:
 	
 cursor = cnx.cursor()
 
-query = ("SELECT x, y FROM dataPoints WHERE value='1'")
+query = ("SELECT x, y FROM dataPoints")
 
 w, h = 33, 33;
 oldGameBoard = [[0 for x in range(w)] for y in range(h)] 
@@ -125,12 +125,18 @@ for(x in range(1, 33)):
 				newGameBoard[x][y] = 1
 
 insertSql = "";				
+#for(x in range(1, 33)):
+#	for(y in range(1, 33)):
+#		if(newGameBoard[x][y] == 1):
+#			insertSql += "UPDATE dataPoints SET value=1 WHERE x=" + x + " AND y=" + y + ";"
+#		else:
+#			insertSql += "UPDATE dataPoints SET value=0 WHERE x=" + x + " AND y=" + y + ";"
+			
+			
 for(x in range(1, 33)):
 	for(y in range(1, 33)):
-		if(newGameBoard[x][y] == 1):
-			insertSql += "UPDATE dataPoints SET value=1 WHERE x=" + x + " AND y=" + y + ";"
-		else:
-			insertSql += "UPDATE dataPoints SET value=0 WHERE x=" + x + " AND y=" + y + ";"
+		if(newGameBoard[x][y] != oldGameBoard[x][y]):
+			insertSql += "UPDATE dataPoints SET value=" + newGameBoard[x][y] + " WHERE x=" + x + " AND y=" + y + ";"
 			
 cursor.execute(insertSql)
 cursor.close()
