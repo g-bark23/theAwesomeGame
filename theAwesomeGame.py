@@ -91,35 +91,35 @@ while true:
 				count = 0;
 				#check row above
 				if(oldGameBoard[x-1][y-1] == 1):
-					count++;
+					count++
 				
 				if(oldGameBoard[x][y-1] == 1):
-					count++;
+					count++
 				
 				if(oldGameBoard[x+1][y-1] == 1):
-					count++;
+					count++
 				
 				
 				#check row
 				if(oldGameBoard[x-1][y] == 1):
-					count++;
+					count++
 				
 				#if(oldGameBoard[x][y] == 1){
 				#	count++;
 				#}
 				if(oldGameBoard[x+1][y] == 1):
-					count++;
+					count++
 				
 				
 				#check row below
 				if(oldGameBoard[x-1][y+1] == 1):
-					count++;
+					count++
 				
 				if(oldGameBoard[x][y+1] == 1):
-					count++;
+					count++
 				
 				if(oldGameBoard[x+1][y+1] == 1):
-					count++;
+					count++
 				
 				if(count == 3):
 					newGameBoard[x][y] = 1
@@ -139,4 +139,5 @@ while true:
 				insertSql += "UPDATE dataPoints SET value=" + newGameBoard[x][y] + " WHERE x=" + x + " AND y=" + y + ";"
 				
 	cursor.execute(insertSql)
+	cnx.commit()
 	cursor.close()
