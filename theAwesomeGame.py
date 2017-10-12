@@ -16,7 +16,7 @@ config = {
 ####	x (int)
 ####	y (int)
 ####	value (int) 1 alive/0 dead
-while (true):
+while True:
 	try:
 		cnx = mysql.connector.connect(**config)
 						
