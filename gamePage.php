@@ -47,6 +47,12 @@
 			var yValue = Math.floor(y/10);
 
 			console.log("Final X: " + xValue + ", Final Y: " + yValue);
+
+			function(){
+		    $.ajax({url: "automater.php", success: function(result){
+		        $("#div1").html(result);
+		    }});
+
 			colorCell(xValue, yValue);
 		}
 
