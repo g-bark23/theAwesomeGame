@@ -30,6 +30,9 @@ while True:
 			print(err)
 	else:
 		cnx.close()
+		
+	if(cnx):
+		print "****passed condition****"
 	print "****trying to open cursor*****"
 	cursor = cnx.cursor()
 	print "****cursor opened****"
