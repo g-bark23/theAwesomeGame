@@ -7,7 +7,8 @@ config = {
 	'user':'W01186504',
 	'password':'Taylorcs!',
 	'host':'127.0.0.1',
-	'database':'W01186504'
+	'database':'W01186504',
+	'raise_on_warnings': True
 }
 
 #Board is 30x30 (33x33)
