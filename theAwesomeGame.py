@@ -81,7 +81,7 @@ while true:
 		#check all live cells
 		if(count < 2):
 			newGameBoard[x][y] = 0
-		elif(count < 4 && count >= 2):
+		elif(count < 4 and count >= 2):
 			newGameBoard[x][y] = 1	
 		else:
 			newGameBoard[x][y] = 0
