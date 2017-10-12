@@ -18,7 +18,8 @@ config = {
 ####	value (int) 1 alive/0 dead
 while True:
 	try:
-		cnx = mysql.connector.connect(**config)	
+		cnx = mysql.connector.connect(**config)
+		print "connection opened"
 	except mysql.connector.Error as err:
 		if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
 			print("Something is wrong with your user name or password")
@@ -28,9 +29,9 @@ while True:
 			print(err)
 	else:
 		cnx.close()
-		
+	print "trying to open cursor"
 	cursor = cnx.cursor()
-	
+	print "cursor opened"
 	
 	createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int)'''
 	
