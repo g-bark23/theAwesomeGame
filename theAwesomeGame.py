@@ -86,8 +86,8 @@ while true:
 		else:
 			newGameBoard[x][y] = 0
 
-	for(x in range(1, 33)):
-		for(y in range(1, 33)):
+	for x in range(1, 33):
+		for y in range(1, 33):
 				count = 0;
 				#check row above
 				if(oldGameBoard[x-1][y-1] == 1):
@@ -132,8 +132,8 @@ while true:
 	#			insertSql += "UPDATE dataPoints SET value=0 WHERE x=" + x + " AND y=" + y + ";"
 				
 				
-	for(x in range(1, 33)):
-		for(y in range(1, 33)):
+	for x in range(1, 33):
+		for y in range(1, 33 ):
 			if(newGameBoard[x][y] != oldGameBoard[x][y]):
 				insertSql += "UPDATE dataPoints SET value=" + newGameBoard[x][y] + " WHERE x=" + x + " AND y=" + y + ";"
 				
