@@ -14,6 +14,10 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+
+		var xCoord;
+		var yCoord;
+
 		var drawGrid = function(w, h, id) {
 		    var canvas = document.getElementById(id);
 		    var ctx = canvas.getContext('2d');
@@ -31,6 +35,24 @@
 		    }
 		    ctx.stroke();
 		};
+
+		$(document).ready(function(){
+		    $("myCanvas").click(function(event){
+		    	storeGuess(event)
+			    $.post("gameoflifeLogic.php",
+			    {
+			        x: xCoord,
+			        y: yCoord
+			    },
+			    function(table){
+			    	var y = 0;
+			        for (var x = 0; x < table.length; x++) {
+			        	table[x, y];
+			        	y++;
+			        	colorCell(x, y);
+		        }
+		    });
+		});
 
 		function storeGuess(event){
 			var x = event.offsetX;
@@ -52,7 +74,8 @@
 		    $.ajax({url: "automater.php", success: function(result){
 		        $("#div1").html(result);
 		    }});
-
+		    xCoord = xValue;
+		    yCoord = yValue;
 			colorCell(xValue, yValue);
 		}
 
