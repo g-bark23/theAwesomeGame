@@ -28,9 +28,6 @@ while True:
 			print("Database does not exist")
 		else:
 			print(err)
-	else:
-		print "****else close****"
-		cnx.close()
 		
 	if(cnx):
 		print "****passed condition****"
