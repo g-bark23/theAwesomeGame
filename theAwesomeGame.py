@@ -4,10 +4,10 @@ import mysql.connector
 
 
 config = {
-	'user':'W01186504',
-	'password':'Taylorcs!',
+	'user':'root',
+	'password':'the1',
 	'host':'127.0.0.1',
-	'database':'W01186504',
+	'database':'theAwesomeGame',
 	'raise_on_warnings': True
 }
 
@@ -28,8 +28,6 @@ while True:
 			print("Database does not exist")
 		else:
 			print(err)
-	else:
-		cnx.close()
 		
 	if(cnx):
 		print "****passed condition****"
@@ -37,8 +35,8 @@ while True:
 	cursor = cnx.cursor()
 	print "****cursor opened****"
 	
-	createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int)'''
-	
+	createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
+	cursor.execute(createSQL)
 
 	query = ("SELECT x, y FROM dataPoints")
 
@@ -53,9 +51,9 @@ while True:
 		insertSql = ""
 		for x in range(1, 33):
 			for y in range(1, 33 ):
-				insertSql += "INSERT INTO dataPoints (x, y, value) values (" + x + "," + y + ", 0);"
+				insertSql = "INSERT INTO dataPoints (x, y, value) values (" + x + "," + y + ", 0);"
 				cursor.execute(insertSql)
-				cnx.commit()
+		cnx.commit()		
 	else:
 
 		cursor.execute(query)
