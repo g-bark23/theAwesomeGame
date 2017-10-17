@@ -4,10 +4,10 @@ import mysql.connector
 
 
 config = {
-	'user':'W01186504',
-	'password':'Taylorcs!',
+	'user':'root',
+	'password':'the1',
 	'host':'127.0.0.1',
-	'database':'W01186504',
+	'database':'theAwesomeGame',
 	'raise_on_warnings': True
 }
 
@@ -55,7 +55,7 @@ while True:
 			for y in range(1, 33 ):
 				insertSql += "INSERT INTO dataPoints (x, y, value) values (" + x + "," + y + ", 0);"
 				cursor.execute(insertSql)
-				cnx.commit()
+		cnx.commit()		
 	else:
 
 		cursor.execute(query)
