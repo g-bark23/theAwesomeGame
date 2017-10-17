@@ -29,6 +29,7 @@ while True:
 		else:
 			print(err)
 	else:
+		print "****else close****"
 		cnx.close()
 		
 	if(cnx):
