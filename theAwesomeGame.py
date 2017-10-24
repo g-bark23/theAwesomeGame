@@ -20,7 +20,6 @@ config = {
 while True:
 	try:
 		cnx = mysql.connector.connect(**config)
-		print "****connection opened*****"
 	except mysql.connector.Error as err:
 		if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
 			print("Something is wrong with your user name or password")
@@ -29,14 +28,9 @@ while True:
 		else:
 			print(err)
 		
-	if(cnx):
-		print "****passed condition****"
-	print "****trying to open cursor*****"
 	cursor = cnx.cursor()
-	print "****cursor opened****"
 	
-	
-	stmt = "SHOW TABLES LIKE 'tableName'"
+	stmt = "SHOW TABLES LIKE 'dataPoints'"
 	cursor.execute(stmt)
 	result = cursor.fetchone()
 	if result == False:
@@ -158,6 +152,7 @@ while True:
 		for x in range(1, 33):
 			for y in range(1, 33 ):
 				if(newGameBoard[x][y] != oldGameBoard[x][y]):
+					print "****updating point*****"
 					updateSql += "UPDATE dataPoints SET value=" + `newGameBoard[x][y]` + " WHERE x=" + `x` + " AND y=" + `y` + ";"
 					
 		cursor.execute(updateSql, multi=True)
