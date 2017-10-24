@@ -1,11 +1,7 @@
 <?php
-	if(isset($_POST['submit'])){
+	if(isset($_POST['x'])){
 		updateDB();
 	}
-	if(isset($_GET['newUser'])){
-		pullDB();
-	}
-	
 	
 	function newConnection(){	
 		$server = 'localhost';      	// server name
@@ -24,16 +20,31 @@
 	function updateDB() {
 		$conn = newConnection();
 		
-		mysqli_select_db($conn,"theAwesomeGame");				// "theAwesomeGame" is DB name	
+		//mysqli_select_db($conn,"theAwesomeGame");				// "theAwesomeGame" is DB name	
 		
-		$updateValue = ;
-		$pointX = ;
-		$pointY = ;
+		//$updateValue = ;
+		$pointX = $_POST['x'];
+		$pointY = $_POST['y'];
+		$updateValue = 0;
+		$selectsql = "SELECT x, y, value FROM dataPoints WHERE x=$pointX AND y=$pointY";
+		$result = mysqli_query($conn, $selectsql);
+
+		if (mysqli_num_rows($result) > 0) {
+			// output data of each row
+			while($row = mysqli_fetch_assoc($result)) {
+				$oldVal = $row["value"]
+			}
+		}
+		
+		if($oldVal == 0){
+			$updateValue = 1
+		}
 		
 		$sql = "UPDATE dataPoints SET value=$updateValue WHERE x=$pointX AND y=$pointY";
 		
 		if ($conn->query($sql) === TRUE) {
-			echo "Record updated successfully";
+			//echo "Record updated successfully";
+			$sql = "SELECT * FROM dataPoints";
 		} else {
 			echo "Error updating record: " . $conn->error;
 		}
