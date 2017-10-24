@@ -109,8 +109,8 @@ while True:
 			else:
 				newGameBoard[x][y] = 0
 
-		for x in range(1, 33):
-			for y in range(1, 33):
+		for x in range(1, 32):
+			for y in range(1, 32):
 					count = 0;
 					#check row above
 					if(oldGameBoard[x-1][y-1] == 1):
