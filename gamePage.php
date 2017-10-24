@@ -37,25 +37,27 @@
 		    ctx.stroke();
 		};
 
-		// $(document).ready(function(){
-		//     $("#myCanvas").click(function(event){
-		//     	storeGuess(event)
-		// 	    $.post("gameoflifeLogic.php",
-		// 	    {
-		// 	        x: xCoord,
-		// 	        y: yCoord
-		// 	    },
-		// 	    function(table){
-		// 	    	var y = 0;
-		// 	        for (var x = 0; x < table.length; x++) {
-		// 	        	var color = table[x, y];
-		// 	        	if (color == 1){
-		// 	        		colorCell(x, y);
-		// 	        	}
-		// 	        	y++;
-		//         }
-		//     });
-		// });
+		$(document).ready(function(){
+		    $("#myCanvas").click(function(event){
+		    	storeGuess(event)
+			    $.post("gameoflifeLogic.php",
+			    {
+			        x: xCoord,
+			        y: yCoord
+			    },
+			    function(table){
+			    	var y = 0;
+			        for (var x = 0; x < table.length; x++) {
+			        	var color = table[x, y];
+			        	if (color == 1){
+			        		colorCell(x, y);
+			        	}
+			        	y++;
+			        }
+		        }
+		        });
+		    });
+		});
 
 		function storeGuess(event){
 			var x = event.offsetX;
