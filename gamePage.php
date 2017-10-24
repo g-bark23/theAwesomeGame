@@ -91,7 +91,7 @@
 
 	</script> 
 </head>
-<body onload="drawGrid(300, 300, 'myCanvas');">
+<body onload="drawGrid(300, 300, 'myCanvas')">
 	<div id="myDivision" class="container">
 		<canvas id="myCanvas"></canvas>
 	</div>	
