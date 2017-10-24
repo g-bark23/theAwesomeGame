@@ -59,7 +59,7 @@ while True:
 		cursor.execute(query)
 		result=cursor.fetchone()
 		for (x, y) in cursor:
-			oldGameBoard[x][y] = result["value"]
+			oldGameBoard[x][y] = `result["value"]`
 			result=cursor.fetchone()
 			
 		for(x, y) in cursor:
