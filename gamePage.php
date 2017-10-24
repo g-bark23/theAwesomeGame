@@ -36,9 +36,8 @@
 		    ctx.stroke();
 		};
 
-		$(document).ready(function(){
-		    $("myCanvas").click(function(event){
-		    	storeGuess(event)
+		$("myCanvas").click(function(event){
+	    	storeGuess(event)
 			    $.post("gameoflifeLogic.php",
 			    {
 			        x: xCoord,
@@ -51,7 +50,6 @@
 			        	y++;
 			        	colorCell(x, y);
 		        }
-		    });
 		});
 
 		function storeGuess(event){
@@ -70,10 +68,10 @@
 
 			console.log("Final X: " + xValue + ", Final Y: " + yValue);
 
-			function(){
-		    $.ajax({url: "automater.php", success: function(result){
-		        $("#div1").html(result);
-		    }});
+			// function(){
+		 //    $.ajax({url: "automater.php", success: function(result){
+		 //        $("#div1").html(result);
+		 //    }});
 		    xCoord = xValue;
 		    yCoord = yValue;
 			colorCell(xValue, yValue);
