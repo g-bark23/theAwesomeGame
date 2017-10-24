@@ -36,8 +36,8 @@
 		    ctx.stroke();
 		};
 
-		$(function() {
-		    $("myCanvas").click(function(event){
+		$(document).ready(function(){
+		    $("#myCanvas").click(function(event){
 		    	storeGuess(event)
 			    $.post("gameoflifeLogic.php",
 			    {
