@@ -158,7 +158,7 @@ while True:
 		for x in range(1, 33):
 			for y in range(1, 33 ):
 				if(newGameBoard[x][y] != oldGameBoard[x][y]):
-					updateSql += "UPDATE dataPoints SET value=" + newGameBoard[x][y] + " WHERE x=" + x + " AND y=" + y + ";"
+					updateSql += "UPDATE dataPoints SET value=" + newGameBoard[x][y] + " WHERE x=" + `x` + " AND y=" + `y` + ";"
 					
 		cursor.execute(updateSql)
 		cnx.commit()
