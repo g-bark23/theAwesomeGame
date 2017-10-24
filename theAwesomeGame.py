@@ -55,11 +55,11 @@ while True:
 				cursor.execute(insertSql)
 		cnx.commit()		
 	else:
-		query = ("SELECT x, y FROM dataPoints")
+		query = ("SELECT x, y, value FROM dataPoints")
 		cursor.execute(query)
 		result=cursor.fetchone()
 		for (x, y) in cursor:
-			oldGameBoard[x][y] = `result["value"]`
+			oldGameBoard[x][y] = result["value"]
 			result=cursor.fetchone()
 			
 		for(x, y) in cursor:
