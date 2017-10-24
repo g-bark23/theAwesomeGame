@@ -53,16 +53,17 @@
 		});
 
 		$("myCanvas").click(function(event){
-			storeGuess(event);
+			//storeGuess(event);
 		    $.ajax({url: "gameoflifeLogic.php", success: function(result){
-		        var y = 0;
-		        for (var x = 0; x < result.length; x++) {
-		        	var color = result[x, y];
-		        	if (color == 1){
-		        		colorCell(x, y);
-		        	}
-		        	y++;
-		    }});
+		        // var y = 0;
+		        // for (var x = 0; x < result.length; x++) {
+		        // 	var color = result[x, y];
+		        // 	if (color == 1){
+		        // 		colorCell(x, y);
+		        // 	}
+		        // 	y++;
+		    	}
+			});
 		});
 
 		function storeGuess(event){
