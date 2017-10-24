@@ -57,10 +57,9 @@ while True:
 	else:
 		query = ("SELECT x, y, value FROM dataPoints")
 		cursor.execute(query)
-		result=cursor.fetchone()
-		for (x, y) in cursor:
-			oldGameBoard[x][y] = result["value"]
-			result=cursor.fetchone()
+		rows = cur.fetchall()
+		for row in rows:
+			oldGameBoard[row["x"]][row["y"]] = row["value"]
 			
 		for(x, y) in cursor:
 			count = 0;
