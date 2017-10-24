@@ -92,12 +92,12 @@
 		}
 
 		function clearBoard(){
-			drawGrid(300, 300, "myCanvas");
+			drawGrid(30, 30, "myCanvas");
 		}
 
 	</script> 
 </head>
-<body onload="drawGrid(300, 300, 'myCanvas')">
+<body onload="drawGrid(30, 30, 'myCanvas')">
 	<div id="myDivision" class="container">
 		<canvas id="myCanvas" onclick="storeGuess(event)"></canvas>
 	</div>	
