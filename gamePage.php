@@ -39,7 +39,7 @@
 
 		$(document).ready(function(){
 		    $("#myCanvas").click(function(event){
-		    	storeGuess(event)
+		    	storeGuess(event);
 			    $.post("gameoflifeLogic.php",
 			    {
 			        x: xCoord,
@@ -55,8 +55,7 @@
 			        	}
 			        	y++;
 			        }
-		        }
-		        );
+		        });
 		    });
 		});
 
