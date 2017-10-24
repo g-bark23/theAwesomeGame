@@ -19,7 +19,7 @@
 		var yCoord;
 
 		$(document).ready(function(){
-			drawGrid(w, h, id) {
+			function drawGrid(w, h, id) {
 			    var canvas = document.getElementById(id);
 			    var ctx = canvas.getContext('2d');
 			    console.log(ctx);
