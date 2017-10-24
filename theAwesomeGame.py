@@ -59,8 +59,8 @@ while True:
 		cursor.execute(query)
 		result=cursor.fetchone()
 		for (x, y) in cursor:
+			oldGameBoard[x][y] = result["value"]
 			result=cursor.fetchone()
-			oldGameBoard[x][y] = result.value
 			
 		for(x, y) in cursor:
 			count = 0;
