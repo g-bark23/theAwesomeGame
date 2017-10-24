@@ -35,8 +35,14 @@ while True:
 	cursor = cnx.cursor()
 	print "****cursor opened****"
 	
-	createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
-	cursor.execute(createSQL)
+	
+	stmt = "SHOW TABLES LIKE 'tableName'"
+	cursor.execute(stmt)
+	result = cursor.fetchone()
+	if result == False:
+		createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
+		cursor.execute(createSQL)
+	
 
 	query = ("SELECT x, y FROM dataPoints")
 
