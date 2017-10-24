@@ -47,13 +47,11 @@
 			    },
 			    function(table)
 			    {
-			    	var y = 0;
-			        for (var x = 0; x < table.length; x++) {
-			        	var color = table[x - 1, y - 1];
-			        	if (color == 1){
-			        		colorCell(x, y);
+			    	var newTable = JSON.parse(table);
+			        for (var i = 0; i < newTable.length; i++) {
+			        	if (newTable[i].color == 1){
+			        		colorCell(newTable[i].x, newTable[i].y);
 			        	}
-			        	y++;
 			        }
 		        });
 		    });
