@@ -153,7 +153,7 @@ while True:
 			for y in range(1, 33 ):
 				if(newGameBoard[x][y] != oldGameBoard[x][y]):
 					print "****updating point*****"
-					print "\t\tpoint " + `x` +","+`y` + "Old val: " + `oldGameBoard[x][y]` + " New val: " + `newGameBoard[x][y]`
+					print "\t\tpoint " + `x` +","+`y` + " Old val: " + `oldGameBoard[x][y]` + " New val: " + `newGameBoard[x][y]`
 					updateSql += "UPDATE dataPoints SET value=" + `newGameBoard[x][y]` + " WHERE x=" + `x` + " AND y=" + `y` + ";"
 					
 		cursor.execute(updateSql, multi=True)
