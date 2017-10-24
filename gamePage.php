@@ -98,7 +98,7 @@
 </head>
 <body onload="drawGrid(300, 300, 'myCanvas')">
 	<div id="myDivision" class="container">
-		<canvas id="myCanvas" onclick="storeGuess(event)"></canvas>
+		<canvas id="myCanvas"></canvas>
 	</div>	
 	<div class="container"><button type="button" onclick="clearBoard()" class="btn btn-danger">Clear</button></div>
 </body>
