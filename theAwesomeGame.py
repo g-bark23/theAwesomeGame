@@ -59,7 +59,7 @@ while True:
 		cursor.execute(query)
 		rows = cursor.fetchall()
 		for row in rows:
-			oldGameBoard[row["x"]][row["y"]] = row["value"]
+			oldGameBoard[row[0]][row[1]] = row[2]
 			
 		for(x, y) in cursor:
 			count = 0;
