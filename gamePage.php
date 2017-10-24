@@ -36,26 +36,26 @@
 		    }
 		    ctx.stroke();
 		};
-			
-		$(document).ready(function(){
-		    $("#myCanvas").click(function(event){
-		    	storeGuess(event)
-			    $.post("gameoflifeLogic.php",
-			    {
-			        x: xCoord,
-			        y: yCoord
-			    },
-			    function(table){
-			    	var y = 0;
-			        for (var x = 0; x < table.length; x++) {
-			        	var color = table[x, y];
-			        	if (color == 1){
-			        		colorCell(x, y);
-			        	}
-			        	y++;
-		        }
-		    });
-		});
+
+		// $(document).ready(function(){
+		//     $("#myCanvas").click(function(event){
+		//     	storeGuess(event)
+		// 	    $.post("gameoflifeLogic.php",
+		// 	    {
+		// 	        x: xCoord,
+		// 	        y: yCoord
+		// 	    },
+		// 	    function(table){
+		// 	    	var y = 0;
+		// 	        for (var x = 0; x < table.length; x++) {
+		// 	        	var color = table[x, y];
+		// 	        	if (color == 1){
+		// 	        		colorCell(x, y);
+		// 	        	}
+		// 	        	y++;
+		//         }
+		//     });
+		// });
 
 		function storeGuess(event){
 			var x = event.offsetX;
@@ -96,7 +96,7 @@
 </head>
 <body onload="drawGrid(300, 300, 'myCanvas')">
 	<div id="myDivision" class="container">
-		<canvas id="myCanvas"></canvas>
+		<canvas id="myCanvas" onclick="storeGuess(event)"></canvas>
 	</div>	
 	<div class="container"><button type="button" onclick="clearBoard()" class="btn btn-danger">Clear</button></div>
 </body>
