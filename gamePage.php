@@ -49,7 +49,7 @@
 			    {
 			    	var y = 0;
 			        for (var x = 0; x < table.length; x++) {
-			        	var color = table[x, y];
+			        	var color = table[x - 1, y - 1];
 			        	if (color == 1){
 			        		colorCell(x, y);
 			        	}
@@ -78,7 +78,7 @@
 
 		    xCoord = xValue;
 		    yCoord = yValue;
-			colorCell(xValue, yValue);
+			//colorCell(xValue, yValue);
 		}
 
 		function colorCell(x, y){
