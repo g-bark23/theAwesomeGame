@@ -38,7 +38,7 @@ while True:
 		cursor.execute(createSQL)
 	
 
-	query = ("SELECT x, y FROM dataPoints")
+	
 
 	w, h = 33, 33;
 	oldGameBoard = [[0 for x in range(w)] for y in range(h)] 
@@ -55,11 +55,12 @@ while True:
 				cursor.execute(insertSql)
 		cnx.commit()		
 	else:
-
+		query = ("SELECT x, y FROM dataPoints")
 		cursor.execute(query)
-
+		result=cursor.fetchone()
 		for (x, y) in cursor:
-			oldGameBoard[x][y] = 1
+			result=cursor.fetchone()
+			oldGameBoard[x][y] = result.value
 			
 		for(x, y) in cursor:
 			count = 0;
