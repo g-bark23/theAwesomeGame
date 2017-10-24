@@ -52,16 +52,18 @@
 	        }
 		});
 
-		// function sendClick(event) {
-		// 	var xhttp = new XMLHttpRequest();
-		// 	xhttp.onreadystatechange = function() {
-		//  	   if (this.readyState == 4 && this.status == 200) {
-		//    		   storeGuess(event);
-		// 	    }
-		// 	  };
-		// 	xhttp.open("POST", "gameoflifeLogic.php", true);
-		// 	xhttp.send();
-		// }
+		$("myCanvas").click(function(event){
+			storeGuess(event);
+		    $.ajax({url: "gameoflifeLogic.php", success: function(result){
+		        var y = 0;
+		        for (var x = 0; x < result.length; x++) {
+		        	var color = result[x, y];
+		        	if (color == 1){
+		        		colorCell(x, y);
+		        	}
+		        	y++;
+		    }});
+		});
 
 		function storeGuess(event){
 			var x = event.offsetX;
