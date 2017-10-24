@@ -45,7 +45,8 @@
 			        x: xCoord,
 			        y: yCoord
 			    },
-			    function(table){
+			    function(table)
+			    {
 			    	var y = 0;
 			        for (var x = 0; x < table.length; x++) {
 			        	var color = table[x, y];
@@ -55,7 +56,7 @@
 			        	y++;
 			        }
 		        }
-		        });
+		        );
 		    });
 		});
 
