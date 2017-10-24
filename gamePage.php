@@ -18,25 +18,25 @@
 		var xCoord;
 		var yCoord;
 
-		var drawGrid = function(w, h, id) {
-		    var canvas = document.getElementById(id);
-		    var ctx = canvas.getContext('2d');
-		    console.log(ctx);
-		    ctx.canvas.width = w;
-		    ctx.canvas.height = h;
-
-		    for (x = 0; x <= w; x += 10) {
-		        ctx.moveTo(x, 0);
-		        ctx.lineTo(x, h);
-		        for (y = 0; y <= h; y += 10) {
-		            ctx.moveTo(0, y);
-		            ctx.lineTo(w, y);
-		        }
-		    }
-		    ctx.stroke();
-		};
-
 		$(document).ready(function(){
+			var drawGrid = function(w, h, id) {
+			    var canvas = document.getElementById(id);
+			    var ctx = canvas.getContext('2d');
+			    console.log(ctx);
+			    ctx.canvas.width = w;
+			    ctx.canvas.height = h;
+
+			    for (x = 0; x <= w; x += 10) {
+			        ctx.moveTo(x, 0);
+			        ctx.lineTo(x, h);
+			        for (y = 0; y <= h; y += 10) {
+			            ctx.moveTo(0, y);
+			            ctx.lineTo(w, y);
+			        }
+			    }
+			    ctx.stroke();
+			};
+
 		    $("#myCanvas").click(function(event){
 		    	storeGuess(event)
 			    $.post("gameoflifeLogic.php",
