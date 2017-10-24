@@ -36,8 +36,8 @@
 		    ctx.stroke();
 		};
 
-		$("myCanvas").click(function(event){
-			storeGuess(event);
+	    $("myCanvas").click(function(event){
+	    	storeGuess(event)
 		    $.post("gameoflifeLogic.php",
 		    {
 		        x: xCoord,
@@ -46,25 +46,13 @@
 		    function(table){
 		    	var y = 0;
 		        for (var x = 0; x < table.length; x++) {
-		        	table[x, y];
+		        	var color = table[x, y];
+		        	if (color == 1){
+		        		colorCell(x, y);
+		        	}
 		        	y++;
-		        	colorCell(x, y);
 	        }
-		});
-
-		$("myCanvas").click(function(event){
-			//storeGuess(event);
-		    $.ajax({url: "gameoflifeLogic.php", success: function(result){
-		        // var y = 0;
-		        // for (var x = 0; x < result.length; x++) {
-		        // 	var color = result[x, y];
-		        // 	if (color == 1){
-		        // 		colorCell(x, y);
-		        // 	}
-		        // 	y++;
-		    	}
-			});
-		});
+	    });
 
 		function storeGuess(event){
 			var x = event.offsetX;
@@ -98,12 +86,12 @@
 		}
 
 		function clearBoard(){
-			drawGrid(300, 300, "myCanvas")
+			drawGrid(300, 300, "myCanvas");
 		}
 
 	</script> 
 </head>
-<body onload="drawGrid(300, 300, 'myCanvas')">
+<body onload="drawGrid(300, 300, 'myCanvas');">
 	<div id="myDivision" class="container">
 		<canvas id="myCanvas"></canvas>
 	</div>	
