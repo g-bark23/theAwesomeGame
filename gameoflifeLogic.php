@@ -82,6 +82,7 @@
 			for ($j = 0; $j < 33; $j++) {
 				$updateSQL += "UPDATE dataPoints SET value = 0 WHERE x=" . $i . " AND y=" . $j . ";";
 			}
+		}
 			
 			if ($conn->query($updateSQL) === TRUE) {
 				$sql = "SELECT * FROM dataPoints";
@@ -97,7 +98,6 @@
 					echo "Error pulling Db: " . $conn->error;
 				}
 			}
-		}
 		mysqli_close($conn);
 	}
 
