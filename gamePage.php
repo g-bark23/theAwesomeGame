@@ -50,7 +50,7 @@
 			    	var newTable = JSON.parse(table);
 			        for (var i = 0; i < newTable.length; i++) {
 			        	if (newTable[i].value == 1){
-			        		colorCell(newTable[i].x, newTable[i].y);
+			        		colorCell(newTable[i].x - 1, newTable[i].y - 1);
 			        	}
 			        }
 		        });
@@ -88,9 +88,19 @@
 			ctx.fill();
 		}
 
-		function clearBoard(){
-			drawGrid(300, 300, "myCanvas");
-		}
+		// function clearBoard(){
+		// 	drawGrid(300, 300, "myCanvas");
+		// }
+
+		$(document).ready(function(){
+		    $("#clear").click(function(event){
+		    	storeGuess(event);
+			    $.post("gameoflifeLogic.php",
+			    {
+			        clear: clear;
+		        });
+		    });
+		});
 
 	</script> 
 </head>
@@ -98,6 +108,6 @@
 	<div id="myDivision" class="container">
 		<canvas id="myCanvas"></canvas>
 	</div>	
-	<div class="container"><button type="button" onclick="clearBoard()" class="btn btn-danger">Clear</button></div>
+	<div class="container"><button id="clear" type="button" onclick="clearBoard()" class="btn btn-danger">Clear</button></div>
 </body>
 </html>
