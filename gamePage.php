@@ -95,10 +95,10 @@
 		$(document).ready(function(){
 		    $("#clear").click(function(event){
 		    	storeGuess(event);
-			    $.post("gameoflifeLogic.php",
+			    $.post("gameoflifeLogic.php")
 			    {
 			        clear: clear;
-		        });
+		        }
 		    });
 		});
 
