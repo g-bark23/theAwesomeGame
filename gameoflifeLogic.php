@@ -3,6 +3,9 @@
 		//updateDB();
 		echo "we made it!"
 	}
+	else{
+		echo "we made it without post"
+	}
 	
 	function newConnection(){	
 		$server = 'localhost';      	// server name
