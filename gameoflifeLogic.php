@@ -82,7 +82,7 @@
 			}
 		}
 			
-			if ($conn->query($updateSQL) === TRUE) {
+			if ($conn->multi_query($updateSQL) === TRUE) {
 				$sql = "SELECT * FROM dataPoints";
 				$myArray = array();
 				$result = mysqli_query($conn, $sql);
