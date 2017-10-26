@@ -1,6 +1,7 @@
 <?php
 	if(isset($_POST['x'])){
-		updateDB();
+		//updateDB();
+		echo "we made it!"
 	}
 	
 	function newConnection(){	
