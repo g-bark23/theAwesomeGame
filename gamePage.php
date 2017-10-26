@@ -75,7 +75,6 @@
 
 		    xCoord = xValue;
 		    yCoord = yValue;
-			//colorCell(xValue, yValue);
 		}
 
 		function colorCell(x, y){
@@ -90,10 +89,9 @@
 
 		$(document).ready(function(){
 		    $("#clear").click(function(event){
-		    	storeGuess(event);
 			    $.post("gameoflifeLogic.php",
 			    {
-			        clear: clear;
+			        clear: clear
 			    },
 			    function(table)
 			    {
