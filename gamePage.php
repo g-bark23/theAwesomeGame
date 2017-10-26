@@ -109,6 +109,6 @@
 		<h1>The Awesome Game</h1>
 		<canvas id="myCanvas"></canvas>
 	</div>	
-	<div class="container"><button id="clear" type="button" class="btn btn-danger">Clear</button></div>
+	<div align="center" class="container"><button id="clear" type="button" class="btn btn-danger">Clear</button></div>
 </body>
 </html>
