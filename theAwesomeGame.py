@@ -32,7 +32,7 @@ while True:
 	
 	stmt = "SHOW TABLES LIKE 'dataPoints'"
 	cursor.execute(stmt)
-	print("show tables row count = " + cursor.rowcount)
+	print("show tables row count = " + `cursor.rowcount`)
 	result = cursor.fetchone()
 	if cursor.rowcount == 0:
 		createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
