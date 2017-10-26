@@ -50,7 +50,7 @@
 			    	var newTable = JSON.parse(table);
 			        for (var i = 0; i < newTable.length; i++) {
 			        	if (newTable[i].color == 1){
-			        		colorCell(newTable[i].x, newTable[i].y);
+			        		colorCell(newTable[i].x - 1, newTable[i].y - 1);
 			        	}
 			        }
 		        });
