@@ -1,10 +1,9 @@
 <?php
 	if(isset($_POST['x'])){
 		updateDB();
-		//echo "we made it!";
 	}
-	else{
-		echo "we made it without post";
+	if(isset($_POST['clear'])){
+		setDBtoZero();
 	}
 	
 	function newConnection(){	
@@ -30,6 +29,9 @@
 		//$updateValue = ;
 		$pointX = $_POST['x'];
 		$pointY = $_POST['y'];
+		$pointX = $pointX + 1;
+		$pointY = $pointY + 1;
+		
 		$updateValue = 0;
 		$selectsql = "SELECT x, y, value FROM dataPoints WHERE x=$pointX AND y=$pointY";
 		$result = mysqli_query($conn, $selectsql);
@@ -37,12 +39,12 @@
 		if (mysqli_num_rows($result) > 0) {
 			// output data of each row
 			while($row = mysqli_fetch_assoc($result)) {
-				$oldVal = $row["value"];
+				$oldVal = $row["value"]
 			}
 		}
 		
 		if($oldVal == 0){
-			$updateValue = 1;
+			$updateValue = 1
 		}
 		
 		$sql = "UPDATE dataPoints SET value=$updateValue WHERE x=$pointX AND y=$pointY";
@@ -54,12 +56,7 @@
 			$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {
-					if($row["x"] == 1 || $row["x"] == 32 || $row["y"] == 1 || $row["y"] == 32){
-						
-					}
-					else{
-						$myArray[] = $row;
-					}
+					$myArray[] = $row;
 				}
 				echo json_encode($myArray);
 			}
@@ -75,13 +72,32 @@
 	}
 	
 	
-	function pullDB() {
+	function setDBtoZero() {
 		$conn = newConnection();
 		
-		mysqli_select_db($conn,"theAwesomeGame");				// "theAwesomeGame" is DB name
-		$sql="SELECT * FROM dataPoints";
-		$result = mysqli_query($conn,$sql);
+		$updateSQL = ""
 		
+		//mysqli_select_db($conn,"theAwesomeGame");				// "theAwesomeGame" is DB name
+		for (int i = 0, i < 33, i++) {
+			for (int j = 0, j < 33, j++) {
+				$updateSQL += "UPDATE dataPoints SET value = 0 WHERE x=" . i . " AND y=" . j . ";";
+			}
+			
+			if ($conn->query($updateSQL) === TRUE) {
+				$sql = "SELECT * FROM dataPoints";
+				$myArray = array();
+				$result = mysqli_query($conn, $sql);
+				if (mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						$myArray[] = $row;
+					}
+					echo json_encode($myArray);
+				}
+				else{
+					echo "Error pulling Db: " . $conn->error;
+				}
+			}
+		}
 		mysqli_close($conn);
 	}
 
