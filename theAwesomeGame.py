@@ -34,7 +34,7 @@ while True:
 	cursor.execute(stmt)
 	print("show tables row count = " + `cursor.rowcount`)
 	result = cursor.fetchone()
-	if cursor.rowcount == 0:
+	if cursor.rowcount == -1:
 		createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
 		cursor.execute(createSQL)
 	
