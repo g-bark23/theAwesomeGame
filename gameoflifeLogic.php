@@ -75,12 +75,12 @@
 	function setDBtoZero() {
 		$conn = newConnection();
 		
-		$updateSQL = ""
+		$updateSQL = "";
 		
 		//mysqli_select_db($conn,"theAwesomeGame");				// "theAwesomeGame" is DB name
-		for (int i = 0, i < 33, i++) {
-			for (int j = 0, j < 33, j++) {
-				$updateSQL += "UPDATE dataPoints SET value = 0 WHERE x=" . i . " AND y=" . j . ";";
+		for ($i = 0; $i < 33; $i++) {
+			for ($j = 0; $j < 33; $j++) {
+				$updateSQL += "UPDATE dataPoints SET value = 0 WHERE x=" . $i . " AND y=" . $j . ";";
 			}
 			
 			if ($conn->query($updateSQL) === TRUE) {
