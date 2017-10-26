@@ -105,7 +105,7 @@
 	</script> 
 </head>
 <body onload="drawGrid(300, 300, 'myCanvas')">
-	<div id="myDivision" class="container-canvas">
+	<div id="myDivision" class="container">
 		<canvas id="myCanvas"></canvas>
 	</div>	
 	<div class="container"><button id="clear" type="button" onclick="clearBoard()" class="btn btn-danger">Clear</button></div>
