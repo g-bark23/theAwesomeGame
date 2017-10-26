@@ -88,10 +88,10 @@
 		}
 
 		$(document).ready(function(){
-		    $("#clear").click(function(event){
+		    $("#clear").click(function(){
 			    $.post("gameoflifeLogic.php",
 			    {
-			        clear: clear
+			        clear: "clear"
 			    },
 			    function(table)
 			    {
