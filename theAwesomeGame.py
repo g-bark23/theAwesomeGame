@@ -32,8 +32,9 @@ while True:
 	
 	stmt = "SHOW TABLES LIKE 'dataPoints'"
 	cursor.execute(stmt)
+	print("show tables row count = " + `cursor.rowcount`)
 	result = cursor.fetchone()
-	if result == False:
+	if cursor.rowcount == 0:
 		createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
 		cursor.execute(createSQL)
 	
@@ -49,8 +50,8 @@ while True:
 	number_of_rows=result[0]
 	if(number_of_rows == 0):
 		insertSql = ""
-		for x in range(1, 33):
-			for y in range(1, 33 ):
+		for x in range(0, 33):
+			for y in range(0, 33 ):
 				insertSql = "INSERT INTO dataPoints (x, y, value) values (" + `x` + "," + `y` + ", 0);"
 				cursor.execute(insertSql)
 		cnx.commit()		
