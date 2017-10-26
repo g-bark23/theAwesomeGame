@@ -1,7 +1,7 @@
 <?php
 	if(isset($_POST['x'])){
-		//updateDB();
-		echo "we made it!";
+		updateDB();
+		//echo "we made it!";
 	}
 	else{
 		echo "we made it without post";
