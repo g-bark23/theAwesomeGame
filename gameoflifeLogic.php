@@ -39,12 +39,12 @@
 		if (mysqli_num_rows($result) > 0) {
 			// output data of each row
 			while($row = mysqli_fetch_assoc($result)) {
-				$oldVal = $row["value"]
+				$oldVal = $row["value"];
 			}
 		}
 		
 		if($oldVal == 0){
-			$updateValue = 1
+			$updateValue = 1;
 		}
 		
 		$sql = "UPDATE dataPoints SET value=$updateValue WHERE x=$pointX AND y=$pointY";
