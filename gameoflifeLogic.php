@@ -29,8 +29,6 @@
 		//$updateValue = ;
 		$pointX = $_POST['x'];
 		$pointY = $_POST['y'];
-		$pointX = $pointX + 1;
-		$pointY = $pointY + 1;
 		
 		$updateValue = 0;
 		$selectsql = "SELECT x, y, value FROM dataPoints WHERE x=$pointX AND y=$pointY";
@@ -80,7 +78,7 @@
 		//mysqli_select_db($conn,"theAwesomeGame");				// "theAwesomeGame" is DB name
 		for ($i = 0; $i < 33; $i++) {
 			for ($j = 0; $j < 33; $j++) {
-				$updateSQL += "UPDATE dataPoints SET value = 0 WHERE x=" . $i . " AND y=" . $j . ";";
+				$updateSQL += "UPDATE dataPoints SET value = 0 WHERE x=$i AND y=$j;";
 			}
 		}
 			
