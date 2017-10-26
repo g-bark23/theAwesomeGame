@@ -31,8 +31,8 @@ while True:
 	cursor = cnx.cursor()
 	
 
-	//createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
-	//cursor.execute(createSQL)
+	#createSQL = '''CREATE TABLE IF NOT EXISTS dataPoints (x int, y int, value int);'''
+	#cursor.execute(createSQL)
 	
 
 	
