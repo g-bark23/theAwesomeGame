@@ -54,7 +54,12 @@
 			$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {
-					$myArray[] = $row;
+					if($row["x"] == 1 || $row["x"] == 32 || $row["y"] == 1 || $row["y"] == 32){
+						
+					}
+					else{
+						$myArray[] = $row;
+					}
 				}
 				echo json_encode($myArray);
 			}
