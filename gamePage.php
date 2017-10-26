@@ -49,9 +49,10 @@
 			    {
 			    	var newTable = JSON.parse(table);
 			        for (var i = 0; i < newTable.length; i++) {
-			        	drawGrid(300, 300, 'myCanvas');
 			        	if (newTable[i].value == 1){
-			        		colorCell(newTable[i].x - 1, newTable[i].y - 1);
+			        		colorCell(newTable[i].x - 1, newTable[i].y - 1, "red");
+			        	}else{
+			        		colorCell(newTable[i].x - 1, newTable[i].y - 1, "white");
 			        	}
 			        }
 		        });
@@ -74,17 +75,17 @@
 
 			console.log("Final X: " + xValue + ", Final Y: " + yValue);
 
-		    xCoord = xValue;
-		    yCoord = yValue;
+		    xCoord = xValue + 1;
+		    yCoord = yValue + 1;
 		}
 
-		function colorCell(x, y){
+		function colorCell(x, y, fillColor){
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext('2d');
 
 			ctx.beginPath();
 			ctx.rect((x * 10) + 1, (y * 10) + 1, 8, 8);
-			ctx.fillStyle = "red";
+			ctx.fillStyle = fillColor;
 			ctx.fill();
 		}
 
