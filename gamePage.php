@@ -106,7 +106,8 @@
 </head>
 <body onload="drawGrid(300, 300, 'myCanvas')">
 	<div id="myDivision" class="container">
-		<canvas id="myCanvas"></canvas>
+		<h1 align="center">The Awesome Game</h1>
+		<canvas align="center" id="myCanvas"></canvas>
 	</div>	
 	<div class="container"><button id="clear" type="button" class="btn btn-danger">Clear</button></div>
 </body>
