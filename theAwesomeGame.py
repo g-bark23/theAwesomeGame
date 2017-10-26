@@ -153,7 +153,7 @@ while True:
 					print "\t\tpoint " + `x` +","+`y` + " Old val: " + `oldGameBoard[x][y]` + " New val: " + `newGameBoard[x][y]`
 					updateSql += "UPDATE dataPoints SET value=" + `newGameBoard[x][y]` + " WHERE x=" + `x` + " AND y=" + `y` + ";"
 					
-		cursor.execute(updateSql, multi=True)
+		cursor.executemany(updateSql)
 		cnx.commit()
 	cursor.close()
 	cnx.close()
