@@ -83,11 +83,7 @@
 		}
 			
 			if ($conn->multi_query($updateSQL) === TRUE) {
-				echo "Success";
-			}
-				else{
-					echo "Error pulling Db: " . $conn->error;
-				}
+				echo "success";
 			}
 		mysqli_close($conn);
 	}
