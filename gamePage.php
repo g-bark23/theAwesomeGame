@@ -89,7 +89,7 @@
 		}
 
 		$(document).ready(function(){
-		    $("#myCanvas").click(function(event){
+		    $("#clear").click(function(event){
 		    	storeGuess(event);
 			    $.post("gameoflifeLogic.php",
 			    {
