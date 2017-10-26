@@ -108,6 +108,6 @@
 	<div id="myDivision" class="container">
 		<canvas id="myCanvas"></canvas>
 	</div>	
-	<div class="container"><button id="clear" type="button" onclick="clearBoard()" class="btn btn-danger">Clear</button></div>
+	<div class="container"><button id="clear" type="button" class="btn btn-danger">Clear</button></div>
 </body>
 </html>
