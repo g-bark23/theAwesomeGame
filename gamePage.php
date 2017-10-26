@@ -40,7 +40,7 @@
 		$(document).ready(function(){
 		    $("#myCanvas").click(function(event){
 		    	storeGuess(event);
-			    $.post("gameoflifeLogic.php",
+			    $.post("/gameoflifeLogic.php",
 			    {
 			        x: xCoord,
 			        y: yCoord
