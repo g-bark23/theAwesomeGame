@@ -14,6 +14,7 @@
 		if (!$conn) {
 			die('Could not connect: ' . mysqli_error($conn));
 		}
+		return $conn;
 	}
 	
 	
@@ -45,6 +46,18 @@
 		if ($conn->query($sql) === TRUE) {
 			//echo "Record updated successfully";
 			$sql = "SELECT * FROM dataPoints";
+			$myArray = array();
+			$result = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($result) > 0) {
+				while($row = mysqli_fetch_assoc($result)) {
+					$myArray[] = $row;
+				}
+				echo json_encode($myArray);
+			}
+			else{
+				echo "Error pulling Db: " . $conn->error;
+			}
+			
 		} else {
 			echo "Error updating record: " . $conn->error;
 		}
