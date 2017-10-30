@@ -145,13 +145,14 @@ while True:
 		#		else:
 		#			insertSql += "UPDATE dataPoints SET value=0 WHERE x=" + x + " AND y=" + y + ";"
 					
-					
+		data = []	
 		for x in range(1, 33):
 			for y in range(1, 33 ):
 				if(newGameBoard[x][y] != oldGameBoard[x][y]):
 					print "****updating point*****"
 					print "\t\tpoint " + `x` +","+`y` + " Old val: " + `oldGameBoard[x][y]` + " New val: " + `newGameBoard[x][y]`
 					updateSql += "UPDATE dataPoints SET value=" + `newGameBoard[x][y]` + " WHERE x=" + `x` + " AND y=" + `y` + ";"
+					data.append((newGameBoard[x][y], x, y))
 		
 		stmt = "UPDATE dataPoints SET value=%s WHERE x=%s AND y=%s"
 		cursor.executemany(stmt, data)
