@@ -156,7 +156,7 @@ while True:
 		stmt = "UPDATE dataPoints SET value=%s WHERE x=%s AND y=%s"
 		cursor.executemany(stmt, data)
 					
-		//cursor.executemany(updateSql)
+		#cursor.executemany(updateSql)
 		cnx.commit()
 	cursor.close()
 	cnx.close()
