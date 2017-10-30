@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import mysql.connector
+import time
 
 
 config = {
