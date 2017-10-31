@@ -94,16 +94,16 @@ else:
 				
 			#check all live cells
 			if(count < 2):
-				print "\t\t****point dead " + x + "," + y +" count = " + count + "*****"
+				#print "\t\t****point dead " + `x` + "," + y +" count = " + count + "*****"
 				newGameBoard[x][y] = 0
 			elif(count == 2):
-				print "\t\t****point survived " + x + "," + y +"*****"
+				#print "\t\t****point survived " + x + "," + y +"*****"
 				newGameBoard[x][y] = 1
 			elif(count == 3):
-				print "\t\t****point survived " + x + "," + y +"*****"
+				#print "\t\t****point survived " + x + "," + y +"*****"
 				newGameBoard[x][y] = 1		
 			else:
-				print "\t\t****point dead " + x + "," + y +" count = " + count + "*****"
+				#print "\t\t****point dead " + x + "," + y +" count = " + count + "*****"
 				newGameBoard[x][y] = 0
 
 	for x in range(1, 32):
