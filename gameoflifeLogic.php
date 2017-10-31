@@ -46,7 +46,7 @@
 		}
 		
 		$sql = "UPDATE dataPoints SET value=$updateValue WHERE x=$pointX AND y=$pointY";
-				
+		$result = mysqli_query($conn, $sql);	
 		mysqli_close($conn);
 		
 		//pullDB();
