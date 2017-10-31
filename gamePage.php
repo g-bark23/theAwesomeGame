@@ -20,18 +20,6 @@
 		
 		var evtSource = new EventSource("gameoflifeLogicAsync.php");
 		
-		/*
-		evtSource.onmessage = function(e) {
-			var newTable = JSON.parse(e);
-			for (var i = 0; i < newTable.length; i++) {
-				if (newTable[i].value == 1){
-			    	colorCell(newTable[i].x - 1, newTable[i].y - 1, "red");
-			     }else{
-			        colorCell(newTable[i].x - 1, newTable[i].y - 1, "white");
-			     }
-			}
-		}
-		*/
 		evtSource.addEventListener("gameBoard", function(e) {
 			var newTable = JSON.parse(e.data);
 			for (var i = 0; i < newTable.length; i++) {

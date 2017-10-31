@@ -51,7 +51,7 @@
 		}
 		
 	function oneTime(){
-		$command = escapeshellcmd('theAwesomeGameOneTIme.py');
+		$command = escapeshellcmd('./theAwesomeGameOneTime.py');
 		$output = shell_exec($command);
 		echo $output;
 	}
