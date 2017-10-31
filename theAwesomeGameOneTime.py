@@ -95,8 +95,10 @@ else:
 		if(count < 2):
 			newGameBoard[x][y] = 0
 		elif(count == 2):
+			print "\t\t****point survived " + x + "," + y "*****"
 			newGameBoard[x][y] = 1
 		elif(count == 3):
+			print "\t\t****point survived " + x + "," + y "*****"
 			newGameBoard[x][y] = 1		
 		else:
 			newGameBoard[x][y] = 0
