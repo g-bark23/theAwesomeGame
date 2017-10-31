@@ -142,7 +142,7 @@ else:
 						count += 1
 										
 					if(count == 3):
-						print "\t\t****point created " + x + "," + y +"*****"
+						#print "\t\t****point created " + x + "," + y +"*****"
 						newGameBoard[x][y] = 1
 
 	updateSql = "";				
