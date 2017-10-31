@@ -16,30 +16,26 @@
 			return $conn;
 		}
 		
-		function pullDB() {
-				$conn = newConnection();
-				
-					//echo "Record updated successfully";
-					$sql = "SELECT * FROM dataPoints";
-					$myArray = array();
-					$result = mysqli_query($conn, $sql);
-					echo "event: gameBoard\n";
-					if (mysqli_num_rows($result) > 0) {
-						while($row = mysqli_fetch_assoc($result)) {
-							$myArray[] = $row;
-						}
-						echo json_encode($myArray);
-					}
-					else{
-						echo "Error pulling Db: " . $conn->error;
-					} 
-				
-				mysqli_close($conn);
-			}
-		
 	while (1) {
 			//echo "start while loop"
-			pullDB();
+			$conn = newConnection();
+			
+				//echo "Record updated successfully";
+				$sql = "SELECT * FROM dataPoints";
+				$myArray = array();
+				$result = mysqli_query($conn, $sql);
+				echo "event: gameBoard\n";
+				if (mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						$myArray[] = $row;
+					}
+					echo json_encode($myArray);
+				}
+				else{
+					echo "Error pulling Db: " . $conn->error;
+				} 
+			
+			mysqli_close($conn);
 
 			ob_end_flush();
 		    flush();
