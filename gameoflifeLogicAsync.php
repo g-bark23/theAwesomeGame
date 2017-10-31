@@ -37,12 +37,12 @@
 			}
 		
 	while (1) {
-			echo "start while loop"
+			//echo "start while loop"
 			pullDB();
 
 			ob_end_flush();
 		    flush();
 		    sleep(1);
-			echo "end while loop"
+			//echo "end while loop"
 		}
 ?>
