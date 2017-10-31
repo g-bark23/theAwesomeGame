@@ -110,39 +110,49 @@ else:
 		for y in range(1, 32):
 				if(oldGameBoard[x][y] != 1):
 					count = 0;
+					msg = ""
+					msg += "Original Point: " + `x` + "," + `y` + "\n"
 					#check row above
 					if(oldGameBoard[x-1][y-1] == 1):
+						msg += "\t Hit Point: " + `x-1` + "," + `y-1` + "\n"
 						count += 1
 					
 					if(oldGameBoard[x][y-1] == 1):
+						msg += "\t Hit Point: " + `x` + "," + `y-1` + "\n"
 						count += 1
 						
 					if(oldGameBoard[x+1][y-1] == 1):
+						msg += "\t Hit Point: " + `x+1` + "," + `y-1` + "\n"
 						count += 1				
 						
 					#check row
 					if(oldGameBoard[x-1][y] == 1):
+						msg += "\t Hit Point: " + `x-1` + "," + `y` + "\n"
 						count += 1
 						
 					#if(oldGameBoard[x][y] == 1){
 					#	count++;
 					#}
 					if(oldGameBoard[x+1][y] == 1):
+						msg += "\t Hit Point: " + `x+1` + "," + `y` + "\n"
 						count += 1
 						
 						
 					#check row below
 					if(oldGameBoard[x-1][y+1] == 1):
+						msg += "\t Hit Point: " + `x-1` + "," + `y+1` + "\n"
 						count += 1
 					
 					if(oldGameBoard[x][y+1] == 1):
+						msg += "\t Hit Point: " + `x` + "," + `y+1` + "\n"
 						count += 1
 						
 					if(oldGameBoard[x+1][y+1] == 1):
+						msg += "\t Hit Point: " + `x+1` + "," + `y+1` + "\n"
 						count += 1
 										
 					if(count == 3):
-						#print "\t\t****point created " + x + "," + y +"*****"
+						print msg
 						newGameBoard[x][y] = 1
 
 	updateSql = "";				
