@@ -94,8 +94,10 @@ else:
 		#check all live cells
 		if(count < 2):
 			newGameBoard[x][y] = 0
-		elif(count < 4 and count >= 2):
-			newGameBoard[x][y] = 1	
+		elif(count == 2):
+			newGameBoard[x][y] = 1
+		elif(count == 3):
+			newGameBoard[x][y] = 1		
 		else:
 			newGameBoard[x][y] = 0
 
