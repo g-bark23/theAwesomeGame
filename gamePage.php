@@ -17,7 +17,19 @@
 
 		var xCoord;
 		var yCoord;
-
+		var evtSource = new EventSource("gameoflifeLogic.php");
+		
+		evtSource.onmessage = function(e) {
+			var newTable = JSON.parse(e);
+			for (var i = 0; i < newTable.length; i++) {
+				if (newTable[i].value == 1){
+			    	colorCell(newTable[i].x - 1, newTable[i].y - 1, "red");
+			     }else{
+			        colorCell(newTable[i].x - 1, newTable[i].y - 1, "white");
+			     }
+			}
+		}
+		
 		
 		function drawGrid(w, h, id) {
 		    var canvas = document.getElementById(id);
@@ -48,13 +60,15 @@
 			    function(table)
 			    {
 			    	var newTable = JSON.parse(table);
-			        for (var i = 0; i < newTable.length; i++) {
+			        /*
+					for (var i = 0; i < newTable.length; i++) {
 			        	if (newTable[i].value == 1){
 			        		colorCell(newTable[i].x - 1, newTable[i].y - 1, "red");
 			        	}else{
 			        		colorCell(newTable[i].x - 1, newTable[i].y - 1, "white");
 			        	}
 			        }
+					*/
 		        });
 		    });
 		});
