@@ -102,10 +102,12 @@
 			var xValue = Math.floor(x/10);
 			var yValue = Math.floor(y/10);
 
-			console.log("Final X: " + xValue + ", Final Y: " + yValue);
+			
 
 		    xCoord = xValue + 1;
 		    yCoord = yValue + 1;
+		
+			console.log("Final X: " + xCoord + ", Final Y: " + yCoord);
 		}
 
 		function colorCell(x, y, fillColor){
