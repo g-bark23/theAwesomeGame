@@ -46,7 +46,23 @@
 		}
 		
 		$sql = "UPDATE dataPoints SET value=$updateValue WHERE x=$pointX AND y=$pointY";
-		$result = mysqli_query($conn, $sql);	
+		$result = mysqli_query($conn, $sql);
+		
+		$sql = "SELECT * FROM dataPoints";
+		$myArray = array();
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$myArray[] = $row;
+			}
+			echo json_encode($myArray);
+		}
+		else{
+			echo "Error pulling Db: " . $conn->error;
+		} 
+
+		
+			
 		mysqli_close($conn);
 		
 		//pullDB();
