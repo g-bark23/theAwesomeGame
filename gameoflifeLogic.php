@@ -97,7 +97,7 @@
 
 	while (1) {
 		
-		updateDB();
+		pullDB();
 
 		ob_end_flush();
 	    flush();
