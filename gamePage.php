@@ -18,7 +18,7 @@
 		var xCoord;
 		var yCoord;
 		
-		var evtSource = new EventSource("gameoflifeLogic.php");
+		var evtSource = new EventSource("gameoflifeLogicAsync.php");
 		
 		evtSource.onmessage = function(e) {
 			var newTable = JSON.parse(e);
