@@ -1,4 +1,7 @@
 <?php
+	header('Cache-Control: no-cache');
+	header("Content-Type: text/event-stream\n\n");
+
 	if(isset($_POST['x'])){
 		updateDB();
 	}
@@ -86,6 +89,17 @@
 				echo "success";
 			}
 		mysqli_close($conn);
+	}
+	
+	
+
+	while (1) {
+		
+		updateDB();
+
+		ob_end_flush();
+	    flush();
+	    sleep(1);
 	}
 
 ?>
