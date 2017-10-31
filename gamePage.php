@@ -18,7 +18,6 @@
 		var xCoord;
 		var yCoord;
 		
-		/*
 		var evtSource = new EventSource("gameoflifeLogic.php");
 		
 		evtSource.onmessage = function(e) {
@@ -32,7 +31,6 @@
 			}
 		}
 		
-		*/
 		function drawGrid(w, h, id) {
 		    var canvas = document.getElementById(id);
 		    var ctx = canvas.getContext('2d');
