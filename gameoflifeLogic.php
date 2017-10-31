@@ -5,6 +5,10 @@
 	if(isset($_POST['clear'])){
 		setDBtoZero();
 	}
+	if(isset($_POST['oneTime'])){
+			toggleOn();
+	}
+	
 	
 	function newConnection(){	
 		$server = 'localhost';      	// server name
@@ -18,6 +22,38 @@
 			die('Could not connect: ' . mysqli_error($conn));
 		}
 		return $conn;
+	}
+	
+	function toggleOn() {
+			$conn = newConnection();
+			
+			$updateValue = 0;
+			$selectsql = "SELECT isOn FROM settings";
+			$result = mysqli_query($conn, $selectsql);
+
+			if (mysqli_num_rows($result) > 0) {
+				// output data of each row
+				while($row = mysqli_fetch_assoc($result)) {
+					$oldVal = $row["value"];
+				}
+			}
+			
+			if($oldVal == 0){
+				$updateValue = 1;
+			}
+			
+			$sql = "UPDATE settings SET value=$updateValue WHERE isOn =$oldVal";
+			$result = mysqli_query($conn, $sql);			
+			
+			mysqli_close($conn);
+			
+			//pullDB();
+		}
+		
+	function oneTime(){
+		$command = escapeshellcmd('theAwesomeGameOneTIme.py');
+		$output = shell_exec($command);
+		echo $output;
 	}
 	
 	

@@ -129,6 +129,17 @@
 			    	drawGrid(300, 300, 'myCanvas');
 		        });
 		    });
+		
+			$("#nextMove").click(function(){
+				    $.post("gameoflifeLogic.php",
+				    {
+				        oneTime: "clear"
+				    },
+				    function(mssg)
+				    {
+				    	console.log(mssg);
+			        });
+			    });
 		});
 
 	</script> 
@@ -138,6 +149,6 @@
 		<h1>The Awesome Game</h1>
 		<canvas id="myCanvas"></canvas>
 	</div>	
-	<div align="center" class="container"><button id="clear" type="button" class="btn btn-danger">Clear</button></div>
+	<div align="center" class="container"><button id="clear" type="button" class="btn btn-danger">Clear</button><button id="nextMove" type="button" class="btn btn-default">Next</button></div>
 </body>
 </html>
