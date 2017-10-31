@@ -29,7 +29,7 @@
 					while($row = mysqli_fetch_assoc($result)) {
 						$myArray[] = $row;
 					}
-					echo "data: " + json_encode($myArray);
+					echo "data: " . json_encode($myArray) . "\n\n";
 				}
 				else{
 					echo "Error pulling Db: " . $conn->error;
