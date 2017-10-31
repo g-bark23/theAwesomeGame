@@ -49,8 +49,15 @@
 		}
 		
 		$sql = "UPDATE dataPoints SET value=$updateValue WHERE x=$pointX AND y=$pointY";
+				
+		mysqli_close($conn);
 		
-		if ($conn->query($sql) === TRUE) {
+		pullDB();
+	}
+	
+	function pullDB() {
+		$conn = newConnection();
+		
 			//echo "Record updated successfully";
 			$sql = "SELECT * FROM dataPoints";
 			$myArray = array();
@@ -63,15 +70,10 @@
 			}
 			else{
 				echo "Error pulling Db: " . $conn->error;
-			}
-			
-		} else {
-			echo "Error updating record: " . $conn->error;
-		}
+			} 
 		
 		mysqli_close($conn);
 	}
-	
 	
 	function setDBtoZero() {
 		$conn = newConnection();
