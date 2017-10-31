@@ -35,11 +35,16 @@
 		evtSource.addEventListener("gameBoard", function(e) {
 			var newTable = JSON.parse(e.data);
 			for (var i = 0; i < newTable.length; i++) {
-				if (newTable[i].value == 1){
-			    	colorCell(newTable[i].x - 1, newTable[i].y - 1, "red");
-			     }else{
-			        colorCell(newTable[i].x - 1, newTable[i].y - 1, "white");
-			     }
+				if(newTable[i].x == 0 || newTable[i].x == 32 || newTable[i].y == 0 || newTable[i].y == 32){
+					continue;
+				}
+				else{
+					if (newTable[i].value == 1){
+				    	colorCell(newTable[i].x - 1, newTable[i].y - 1, "red");
+				     }else{
+				        colorCell(newTable[i].x - 1, newTable[i].y - 1, "white");
+				     }
+				}
 			}
 		}, false);
 		
