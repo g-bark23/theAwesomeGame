@@ -1,7 +1,4 @@
 <?php
-	header('Cache-Control: no-cache');
-	header("Content-Type: text/event-stream\n\n");
-
 	if(isset($_POST['x'])){
 		updateDB();
 	}
@@ -52,7 +49,7 @@
 				
 		mysqli_close($conn);
 		
-		pullDB();
+		//pullDB();
 	}
 	
 	function pullDB() {
@@ -92,17 +89,4 @@
 			}
 		mysqli_close($conn);
 	}
-	
-	
-	
-	while (1) {
-		echo "start while loop"
-		pullDB();
-
-		ob_end_flush();
-	    flush();
-	    sleep(1);
-		echo "end while loop"
-	}
-
 ?>
