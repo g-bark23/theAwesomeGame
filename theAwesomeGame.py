@@ -162,4 +162,4 @@ while True:
 		cnx.commit()
 	cursor.close()
 	cnx.close()
-	time.sleep(5)
+	time.sleep(2)
