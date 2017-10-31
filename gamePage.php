@@ -59,7 +59,7 @@
 			    },
 			    function(table)
 			    {
-			    	var newTable = JSON.parse(table);
+			    	//var newTable = JSON.parse(table);
 			        /*
 					for (var i = 0; i < newTable.length; i++) {
 			        	if (newTable[i].value == 1){
