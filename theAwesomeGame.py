@@ -59,50 +59,53 @@ while True:
 		for row in rows:
 			oldGameBoard[row[0]][row[1]] = row[2]
 			
-		for(x, y) in cursor:
-			count = 0;
-			#check row above
-			if(oldGameBoard[x-1][y-1] == 1):
-				count += 1
-			
-			if(oldGameBoard[x][y-1] == 1):
-				count += 1
-			
-			if(oldGameBoard[x+1][y-1] == 1):
-				count += 1
-			
-			
-			#check row
-			if(oldGameBoard[x-1][y] == 1):
-				count += 1
-						
-			#if(oldGameBoard[x][y] == 1){
-			#	count++;
-			#}
-			if(oldGameBoard[x+1][y] == 1):
-				count += 1
-			
-			
-			#check row below
-			if(oldGameBoard[x-1][y+1] == 1):
-				count += 1
-			
-			if(oldGameBoard[x][y+1] == 1):
-				count += 1
-			
-			if(oldGameBoard[x+1][y+1] == 1):
-				count += 1
-			
-			#check all live cells
-			if(count < 2):
-				newGameBoard[x][y] = 0
-			elif(count < 4 and count >= 2):
-				newGameBoard[x][y] = 1	
-			else:
-				newGameBoard[x][y] = 0
+		for x in range(1, 32):
+			for y in range(1, 32):
+				if(oldGameBoard[x][y] == 1):
+					count = 0;
+					#check row above
+					if(oldGameBoard[x-1][y-1] == 1):
+						count += 1
+					
+					if(oldGameBoard[x][y-1] == 1):
+						count += 1
+					
+					if(oldGameBoard[x+1][y-1] == 1):
+						count += 1
+					
+					
+					#check row
+					if(oldGameBoard[x-1][y] == 1):
+						count += 1
+								
+					#if(oldGameBoard[x][y] == 1){
+					#	count++;
+					#}
+					if(oldGameBoard[x+1][y] == 1):
+						count += 1
+					
+					
+					#check row below
+					if(oldGameBoard[x-1][y+1] == 1):
+						count += 1
+					
+					if(oldGameBoard[x][y+1] == 1):
+						count += 1
+					
+					if(oldGameBoard[x+1][y+1] == 1):
+						count += 1
+					
+					#check all live cells
+					if(count < 2):
+						newGameBoard[x][y] = 0
+					elif(count < 4 and count >= 2):
+						newGameBoard[x][y] = 1	
+					else:
+						newGameBoard[x][y] = 0
 
 		for x in range(1, 32):
 			for y in range(1, 32):
+				if(oldGameBoard[x][y] != 1):
 					count = 0;
 					#check row above
 					if(oldGameBoard[x-1][y-1] == 1):
