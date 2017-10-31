@@ -39,7 +39,7 @@
 
 			ob_end_flush();
 		    flush();
-		    sleep(1);
+		    sleep(.5);
 			//echo "end while loop"
 		}
 ?>
