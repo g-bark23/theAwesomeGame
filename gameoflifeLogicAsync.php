@@ -23,6 +23,7 @@
 					$sql = "SELECT * FROM dataPoints";
 					$myArray = array();
 					$result = mysqli_query($conn, $sql);
+					echo "event: gameBoard\n";
 					if (mysqli_num_rows($result) > 0) {
 						while($row = mysqli_fetch_assoc($result)) {
 							$myArray[] = $row;
