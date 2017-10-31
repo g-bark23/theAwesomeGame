@@ -104,8 +104,8 @@
 
 			console.log("Final X: " + xValue + ", Final Y: " + yValue);
 
-		    xCoord = xValue + 1;
-		    yCoord = yValue + 1;
+		    xCoord = xValue;
+		    yCoord = yValue;
 		}
 
 		function colorCell(x, y, fillColor){
